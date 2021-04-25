@@ -36,6 +36,7 @@ request.onsuccess = function(e) {
 
     // add recordto your store with add method
     budgetObjectStore.add(record);
+    alert('You are now offline.\nBudget Tracker will submit all offline activity to chart once internet connection is restored.')
   };
 
 function uploadTransaction() {
@@ -61,6 +62,7 @@ function uploadTransaction() {
                     const budgetObjectStore = transaction.objectStore('new_budget');
                     
                     budgetObjectStore.clear();
+                    alert('All offline activity has been submitted')
                 })
                 .catch(err => console.log(err));
         }
